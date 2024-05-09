@@ -1,0 +1,16 @@
+em ~/.profile: export XDG_DOCUMENTS_DIR="$HOME/missao_42/"
+flatpak override org.mozilla.firefox --user --filesystem=$XDG_DOCUMENTS_DIR
+------------------------------------------
+exibir os settings atuais do flatpak
+flatpak override --show --user
+flatpak override --show --user org.mozilla.firefox
+
+Liberando todos os arquivos pra acesso no flatpak
+flatpak override --user --filesystem=host
+flatpak override org.mozilla.firefox --user --filesystem=host
+
+Reset dos atributos de acesso aos arquivos do flatpak:
+flatpak override --show --user --reset=filesystem org.mozilla.firefox
+flatpak override --show --user --reset=filesystem
+
+echo $XDG_RUNTIME_DIR
