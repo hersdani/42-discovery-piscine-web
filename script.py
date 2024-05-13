@@ -4,11 +4,11 @@ def generate_html(directory):
     html = '<html>\n<head>\n<title>Index</title>\n</head>\n<body>\n<ul>\n'
     
     for item in os.listdir(directory):
-        if os.path.isdir(os.path.join(directory, item)):
-            html += f'<li><a href="{item}/index.html">{item}</a></li>\n'
+        item_path = os.path.join(directory, item)
+        if os.path.isdir(item_path):
+            html += f'<li><a href="{item}/index.html">{item}/</a></li>\n'
         else:
-            if item.endswith('.html'):
-                html += f'<li><a href="{item}">{item}</a></li>\n'
+            html += f'<li><a href="{item}">{item}</a></li>\n'
 
     html += '</ul>\n</body>\n</html>'
     return html
