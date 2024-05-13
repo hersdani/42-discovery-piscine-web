@@ -7,7 +7,6 @@
 </head>
   <body>
     <ul id="fileList"></ul>
-
     <script>
       async function fetchHTMLFiles(url) {
         const response = await fetch(url);
@@ -21,10 +20,8 @@
             htmlString += await fetchHTMLFiles(file.url);
           }
         }
-
         return htmlString;
       }
-
       (async () => {
         const repositoryUrl = 'https://api.github.com/repos/hersdani/42-discovery-piscine-web/contents/';
         const fileListElement = document.getElementById('fileList');
