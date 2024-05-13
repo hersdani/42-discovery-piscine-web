@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>42-discovery-piscine-web</title>
+<title>Index</title>
 </head>
-  <body>
-    <ul id="fileList"></ul>
-    <script>
-      async function fetchHTMLFiles(url) {
-        const response = await fetch(url);
-        const data = await response.json();
-        let htmlString = '';
-
-        for (let file of data) {
-          if (file.type === 'file' && file.name.endsWith('.html')) {
-            htmlString += `<li><a href="${file.html_url}">${file.name}</a></li>`;
-          } else if (file.type === 'dir') {
-            htmlString += await fetchHTMLFiles(file.url);
-          }
-        }
-        return htmlString;
-      }
-      (async () => {
-        const repositoryUrl = 'https://api.github.com/repos/hersdani/42-discovery-piscine-web/contents/';
-        const fileListElement = document.getElementById('fileList');
-        fileListElement.innerHTML = await fetchHTMLFiles(repositoryUrl);
-      })();
-    </script>
-  </body>
+<body>
+<ul>
+<li><a href="04/index.html">04</a></li>
+<li><a href="03/index.html">03</a></li>
+<li><a href="01/index.html">01</a></li>
+<li><a href=".git/index.html">.git</a></li>
+<li><a href="02/index.html">02</a></li>
+<li><a href="00/index.html">00</a></li>
+<li><a href="-/index.html">-</a></li>
+</ul>
+</body>
 </html>
